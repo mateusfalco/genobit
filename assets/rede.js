@@ -81,10 +81,8 @@
 
   criar();
   var params = new URLSearchParams(location.search);
-  if (params.has('quadro')) {             // modo prévia: um instante fixo, logo pulsando junto
+  if (params.has('quadro')) {             // modo prévia: desenha um instante fixo
     var t = Number(params.get('quadro')) / Number(params.get('fps') || 12);
-    document.documentElement.style.setProperty('--atraso-pulso', (-t) + 's');
-    document.documentElement.classList.add('quadro-fixo');
     desenhar(t);
     return;
   }
